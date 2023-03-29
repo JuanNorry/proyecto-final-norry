@@ -1,0 +1,14 @@
+{% extends "proyectoFinal/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<br><br>
+<div style="margin-top:40px">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Crear Perfil">
+</form>
+</div>
+{% endblock %}

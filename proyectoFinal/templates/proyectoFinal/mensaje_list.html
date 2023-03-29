@@ -1,0 +1,22 @@
+{% extends "proyectoFinal/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<br><br>
+ <div style="margin-top: 40px;">
+ <h1> Mensajes Recibidos </h1>
+<ul>
+    {%  for mensaje in mensajes  %}
+    <li> Mensaje de: {{mensaje.mail}} 
+        <br> 
+        {{ mensaje.mensaje }}
+        <br>
+        <a href="{% url 'mensaje-delete' mensaje.id %}">Borrar</a>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+
+<a href="{% url 'mensaje-create' %}" type="button" class="btn btn-sm btn-outline-secondary">Enviar mensaje</a>
+{% endblock %}
